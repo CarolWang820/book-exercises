@@ -13,28 +13,27 @@ View(grants)
 # the dataset
 organization <- grants$organization
 
-
-# Confirm that the "organization" column is a vector using the `is.vector()` 
-# function. 
+# Confirm that the "organization" column is a vector using the `is.vector()`
+# function.
 # This is a useful debugging tip if you hit errors later!
-
+is.vector(organization)
 
 ## Now you can ask some interesting questions about the dataset
 
 # What was the mean grant value?
-
+mean_spending <- mean(grants$total_amount)
 
 # What was the dollar amount of the largest grant?
-
+highest_amount <- max(grants$total_amount)
 
 # What was the dollar amount of the smallest grant?
-
+lowest_amount <- min(grants$total_amount)
 
 # Which organization received the largest grant?
-
+largest_recipient <- organization[grants$total_amount == highest_amount]
 
 # Which organization received the smallest grant?
-
+smallest_recipient <- organization[grants$total_amount == lowest_amount]
 
 # How many grants were awarded in 2010?
-
+length(grants$total_amount[grants$start_year == 2010])
